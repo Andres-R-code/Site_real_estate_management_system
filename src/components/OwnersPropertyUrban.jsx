@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { getOwnersPropertyRural } from '../controllers/controllers'
+import { propertyOwnersUrban} from '../controllers/controllers'
 
 const OwnersPropertyRural = () => {
 
@@ -8,7 +8,7 @@ const OwnersPropertyRural = () => {
 
     const params = useParams()
     useEffect(()=> {
-        getOwnersPropertyRural(params.id, setOwnersProperty)
+        propertyOwnersUrban(params.id, setOwnersProperty)
     }, [])
 
     return (

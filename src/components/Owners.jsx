@@ -29,16 +29,13 @@ const Propietarios = () => {
                     <div key={owner.code}>
                         
                         <a href={`/propietario/${owner.code}`}>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                        <table>
                             <tr>
                                 <td>{owner.tipe_owner}</td>
                                 <td>{owner.names}</td>
                                 <td>{owner.id_owner}</td>
                             </tr>
+                            </table>
                         </a>
                     </div>
                 )

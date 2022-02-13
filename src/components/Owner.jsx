@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getOwner } from '../controllers/controllers'
 
 import OwnersPropertyRural from './OwnersPropertyRural'
+import OwnersPropertyUrban from  './OwnersPropertyUrban'
 
 
 const Owner = () => {
@@ -64,9 +65,11 @@ const Owner = () => {
                             </tr>
                         </table>
                         <OwnersPropertyRural/>
+                        <OwnersPropertyUrban/>
                     </div>
                 </div>
-            ) : ('Owner does not exist')}
+            ) : ('Owner does not exist')
+            }
         </>
     )
 }

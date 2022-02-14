@@ -4,17 +4,17 @@ import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 
 
-function RuralProperties() {
+function UrbanProperties() {
 
-    const [ ruralProperties, setRuralProperties] = useState(null)
+    const [ urbanProperties, setUrbanProperties] = useState(null)
     const [ table, setTable] = useState(null)
     const [ search, setSearch] = useState("")
 
     const searchPeticions = async() => {
-        await axios.get("http://127.0.0.1:8000/rural-properties/")
+        await axios.get("http://127.0.0.1:8000/urban-properties/")
         .then(response => {
             console.log(response.data)
-            setRuralProperties(response.data);
+            setUrbanProperties(response.data);
             setTable(response.data);
         }).catch( error => {
             console.log(error)
@@ -33,11 +33,11 @@ function RuralProperties() {
                 ||
                 data.id_cadastral.toString().toLowerCase().includes(enteredSearch.toLowerCase()) 
                 ||
+                data.address.toString().toLowerCase().includes(enteredSearch.toLowerCase())
+                ||
                 data.registration_real_estate.toString().toLowerCase().includes(enteredSearch.toLowerCase())
                 ||
                 data.tipe.toString().toLowerCase().includes(enteredSearch.toLowerCase())
-                ||
-                data.name.toString().toLowerCase().includes(enteredSearch.toLowerCase())
                 ||
                 data.department.toString().toLowerCase().includes(enteredSearch.toLowerCase())
                 )
@@ -45,7 +45,7 @@ function RuralProperties() {
                 return data
             }
         });
-        setRuralProperties(searchResult);
+        setUrbanProperties(searchResult);
     }
 
     useEffect(() => {
@@ -56,12 +56,12 @@ function RuralProperties() {
     return (
         <section className='section'>
             <div className='col-md-12 mb-4 text-center'>
-                <h3 className='main-heading'>Buscador de predios rurales</h3>
+                <h3 className='main-heading'>Buscador de predios urbanos</h3>
                 <div className='underline mx-auto'></div>
             </div>
 
             <div className="containerInput"> 
-                <input
+                <input 
                     className="form-control inputBuscar"
                     value={search} 
                     placeholder="Ingresa algun dato del predio"
@@ -69,25 +69,29 @@ function RuralProperties() {
                 />
             </div>
 
-                
-                        {ruralProperties &&
-                            ruralProperties.map((ruralProperty => (
-                                <tr key={ruralProperty.code}>
-                                    <Link to={`/predio-rural/${ruralProperty.code}`}>
-                                        <tr>
-                                            {/* <td>{ruralProperty.code}</td> */}
-                                            <td>{ruralProperty.id_cadastral}</td>
-                                            <td>{ruralProperty.registration_real_estate}</td>
-                                            <td>{ruralProperty.tipe}</td>
-                                        </tr>
-                                    </Link>
-                                </tr>
-                        )
-                        ))
-                        }
+            { urbanProperties != null ? (
+
+                urbanProperties.map((urbanProperty => (
+                    <div key={urbanProperty.code}>
+                        
+                        <Link to={`/predio-urbano/${urbanProperty.code}`}>
+                            <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>{urbanProperty.code}</td>
+                                <td>{urbanProperty.id_cadastral}</td>
+                                <td>{urbanProperty.registration_real_estate}</td>
+                                <td>{urbanProperty.tipe}</td>
+                            </tr>
+                            </tbody>
+                        </Link>
+                    </div>
+                )
+                ))) : ('There are no urban properties')
+            }
         </section>
     )
 
 }
 
-export default RuralProperties
+export default UrbanProperties

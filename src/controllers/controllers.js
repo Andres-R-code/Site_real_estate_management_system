@@ -26,7 +26,7 @@ const getOwnersPropertyRural = async (id, state) => {
 const getRuralProperties = async (state) => {
     const peticion = await axios.get("http://127.0.0.1:8000/rural-properties/")
     console.log(peticion.data)
-    state(peticion.data)
+    state(peticion.data);
 }
 
 const getRuralProperty = async (id, state) => {

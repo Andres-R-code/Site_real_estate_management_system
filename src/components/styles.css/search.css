@@ -1,0 +1,37 @@
+
+
+  
+  .inputBuscar{
+    width: 50% !important;
+  }
+  
+  table{
+    min-width: 500px;
+  }
+  
+  .containerInput{
+    align-items: end;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px;
+    padding-bottom: 25px;
+  }
+  
+  @media (max-width: 988px){
+    
+    .inputBuscar{
+      width: 100% !important;
+    }
+
+    .containerInput{
+    margin: 40px;
+    padding-bottom: 15px;
+  }
+  
+
+  
+    
+  
+  
+  }

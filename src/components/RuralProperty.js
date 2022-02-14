@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { getRuralProperty } from '../controllers/controllers'
-
+import './owner.css'
 const RuralProperty = () => {
     
     const [ ruralProperty, setRuralProperty] = useState(null)
@@ -18,7 +18,7 @@ const RuralProperty = () => {
             {ruralProperty != null ? (
 
                 <div>
-                    <div>
+                    <div className='cardList'>
                         <p>
                             <b>Código:</b> {params.id}
                         </p>

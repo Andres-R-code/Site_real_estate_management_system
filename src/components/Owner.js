@@ -69,13 +69,7 @@ const Owner = () => {
                                         <div className='card shadow cardData'>
                                             <h4 className='text-center bg-light border container-info'>{`Propiedades de ${owner.names}`}</h4>
 
-                                            <table class="table table-striped">
-                                                <tr>
-                                                    {/* <th>Cedula catastral</th> */}
-                                                    <th>Nombre/dirección</th>
-                                                    <th>tipo</th>
-                                                </tr>
-                                            </table>
+                                            
                                             <OwnersPropertyRural />
                                             <OwnersPropertyUrban />
                                         </div>

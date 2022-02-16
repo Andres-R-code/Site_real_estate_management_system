@@ -49,7 +49,11 @@ const RuralProperty = () => {
 
                                 <div className='col-md-6'>
                                     <div className='card shadow cardData'>
-                                        <h4 className='text-center bg-light border container-info'>{`Propietarios`}</h4>
+                                        <h4 className='text-center 
+                                            bg-light border container-info'
+                                            >{
+                                            `Propietarios`}
+                                            </h4>
                                         <div>
                                             <p>
                                                 {ruralProperty.owners.map(owner =>

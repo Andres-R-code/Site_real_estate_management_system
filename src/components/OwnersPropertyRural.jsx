@@ -20,13 +20,10 @@ const OwnersPropertyRural = () => {
                     <div key={ownerProperty.code}>
                         
                         <a href={`/propietario/${ownerProperty.tipe}`}>
-                        <table>
-                            <tr>
-                                <td>{ownerProperty.id_cadastral}</td>
-                                <td>{ownerProperty.name}</td>
-                                <td>{ownerProperty.tipe}</td>
-                            </tr>
-                        </table>
+
+                        <div>
+                            <p> - Nombres: {ownerProperty.name} / Cédula {ownerProperty.id_cadastral}</p>
+                        </div>
                         </a>
                     </div>
                 )

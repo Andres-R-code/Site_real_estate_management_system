@@ -16,7 +16,7 @@ const getOwner = async (id, state) => {
 }
 
 const getOwnersPropertyRural = async (id, state) => {
-    const peticion = await axios.get(`http://127.0.0.1:8000/rural-properties/?owners=${id}`)
+    const peticion = await axios.get(`https://management-properties.herokuapp.com/rural-properties/?owners=${id}`)
     console.log(peticion)
     state(peticion.data)
 }

@@ -28,7 +28,7 @@ const Owner = () => {
                                 <div className='row '>
                                     <div className='col-md-6'>
                                         <div className='card shadow cardData'>
-                                        <h4>Información de Propietario</h4>
+                                        <h4 className='text-center bg-light border container-info'>Información de Propietario</h4>
                                         <div className='cardList'>
                                             <p>
                                                 <b>Código:</b> {params.id}
@@ -63,9 +63,11 @@ const Owner = () => {
                                         </div>
                                         </div>
                                     </div>
+
+
                                     <div className='col-md-6'>
                                         <div className='card shadow cardData'>
-                                            <h4>{`Predios a nombre ${owner.names}`}</h4>
+                                            <h4 className='text-center bg-light border container-info'>{`Propiedades de ${owner.names}`}</h4>
 
                                             <table class="table table-striped">
                                                 <tr>

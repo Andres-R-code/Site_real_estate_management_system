@@ -10,7 +10,7 @@ const getOwners = async (state) => {
 }
 
 const getOwner = async (id, state) => {
-    const peticion = await axios.get(`http://127.0.0.1:8000/owners/${id}`)
+    const peticion = await axios.get(`https://management-properties.herokuapp.com/owners/${id}`)
     console.log(peticion)
     state(peticion.data)
 }
@@ -30,7 +30,7 @@ const getRuralProperties = async (state) => {
 }
 
 const getRuralProperty = async (id, state) => {
-    const peticion = await axios.get(`http://127.0.0.1:8000/rural-properties/${id}`)
+    const peticion = await axios.get(`https://management-properties.herokuapp.com/rural-properties/${id}`)
     console.log(peticion)
     state(peticion.data)
 }
@@ -51,7 +51,7 @@ const getUrbanProperties = async (state) => {
 }
 
 const getUrbanProperty = async (id, state) => {
-    const peticion = await axios.get(`http://127.0.0.1:8000/urban-properties/${id}`)
+    const peticion = await axios.get(`https://management-properties.herokuapp.com/urban-properties/${id}`)
     console.log(peticion)
     state(peticion.data)
 }

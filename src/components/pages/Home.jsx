@@ -5,7 +5,6 @@ import ruralIcon from '../img/rural icon.png'
 import ownerIcon from '../img/owner icon.png'
 import './home.css'
 
-import Footer from '../inc/Footer'
 
 const Home = () => {
 

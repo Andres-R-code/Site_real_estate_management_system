@@ -14,7 +14,6 @@ import RuralProperty from './components/RuralProperty'
 import UrbanProperties from './components/UrbanProperties'
 import UrbanProperty from './components/UrbanProperty'
 import Navbar from './components/inc/Navbar'
-import Footer from './components/inc/Footer'
 
 function App() {
   return (

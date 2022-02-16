@@ -2,6 +2,7 @@ import '../App.css'
 import axios from 'axios'
 import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
+import './owner.css'
 
 
 function RuralProperties() {
@@ -11,7 +12,7 @@ function RuralProperties() {
     const [ search, setSearch] = useState("")
 
     const searchPeticions = async() => {
-        await axios.get("http://127.0.0.1:8000/rural-properties/")
+        await axios.get("https://management-properties.herokuapp.com/rural-properties/")
         .then(response => {
             console.log(response.data)
             setRuralProperties(response.data);
@@ -70,21 +71,20 @@ function RuralProperties() {
             </div>
 
                 
+                <div className='wrapper'>
+                    <div className='col-md-12 mb-4 text-center vstack gap-3'>
                         {ruralProperties &&
-                            ruralProperties.map((ruralProperty => (
-                                <tr key={ruralProperty.code}>
-                                    <Link to={`/predio-rural/${ruralProperty.code}`}>
-                                        <tr>
-                                            {/* <td>{ruralProperty.code}</td> */}
-                                            <td>{ruralProperty.id_cadastral}</td>
-                                            <td>{ruralProperty.registration_real_estate}</td>
-                                            <td>{ruralProperty.tipe}</td>
-                                        </tr>
-                                    </Link>
-                                </tr>
-                        )
-                        ))
-                        }
+                                ruralProperties.map((ruralProperty => (
+                                    <div key={ruralProperty.code}>
+                                        <Link to={`/predio-rural/${ruralProperty.code}`}>
+                                            <p class="bg-light border">Nombre: {ruralProperty.name} / Cédula Catastral {ruralProperty.id_cadastral} / Tipo: {ruralProperty.tipe}</p>
+                                        </Link>
+                                    </div>
+                            )
+                            ))
+                            }
+                    </div>
+                </div>
         </section>
     )
 

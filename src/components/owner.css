@@ -1,4 +1,7 @@
 
+.wrapper {
+    margin-top: 25px;
+}
 .cardData {
     padding: 30px;
 }
@@ -6,3 +9,9 @@
 .cardList {
     padding-top: 10px;
 }
+
+.container-info {
+    margin-top: 8px;
+    padding: 3px;
+}
+
